@@ -1,5 +1,12 @@
 ﻿namespace LinkedOut;
-public class Class1
-{
 
-}
+// Events
+
+public record UserCreatedLink();
+
+
+
+// Commands
+
+public record CreateUserLink();
+

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedOut", "LinkedOut.csproj", "{80614F63-B0F9-422D-8CFE-92CF64C97DF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkedOut", "LinkedOut.csproj", "{80614F63-B0F9-422D-8CFE-92CF64C97DF3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkedOut.Tests", "..\LinkedOut.Tests\LinkedOut.Tests.csproj", "{CC6AB735-3341-4659-8A87-3BD22E6B60CC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedOut.Tests", "..\LinkedOut.Tests\LinkedOut.Tests.csproj", "{1874F1DA-703C-4969-A640-268C9DB04427}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{80614F63-B0F9-422D-8CFE-92CF64C97DF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80614F63-B0F9-422D-8CFE-92CF64C97DF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80614F63-B0F9-422D-8CFE-92CF64C97DF3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CC6AB735-3341-4659-8A87-3BD22E6B60CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CC6AB735-3341-4659-8A87-3BD22E6B60CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CC6AB735-3341-4659-8A87-3BD22E6B60CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CC6AB735-3341-4659-8A87-3BD22E6B60CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1874F1DA-703C-4969-A640-268C9DB04427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1874F1DA-703C-4969-A640-268C9DB04427}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1874F1DA-703C-4969-A640-268C9DB04427}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1874F1DA-703C-4969-A640-268C9DB04427}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
