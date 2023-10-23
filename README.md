@@ -1,1 +1,1 @@
-# for the Intro to Programming clas
+# for the Intro to Programming class
