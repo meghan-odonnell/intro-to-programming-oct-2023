@@ -8,7 +8,7 @@ public class Account
 
     public void Deposit(decimal amountToDeposit)
     {
-        throw new NotImplementedException();
+        _balance +=
     }
 
     public decimal GetBalance()
