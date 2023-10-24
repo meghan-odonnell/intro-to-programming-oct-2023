@@ -1,12 +1,9 @@
-﻿using Banking.Domain;
-
-
+﻿
+using Banking.Domain;
 
 namespace Banking.Tests;
 public class MakingDeposits
 {
-
-
 
     [Fact]
     public void MakingADepositIncreasesBalance()
@@ -18,6 +15,7 @@ public class MakingDeposits
 
         // when
         account.Deposit(amountToDeposit);
+
 
         // Then
         Assert.Equal(openingBalance + amountToDeposit, account.GetBalance());

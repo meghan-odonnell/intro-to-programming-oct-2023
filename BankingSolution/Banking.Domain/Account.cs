@@ -2,22 +2,23 @@
 
 public class Account
 {
-    public Account()
-    {
-    }
-
+    private decimal _balance = 5000;
     public void Deposit(decimal amountToDeposit)
     {
-        _balance +=
+        _balance += amountToDeposit;
     }
 
     public decimal GetBalance()
     {
-        return 5000; // "slimed"
+        return _balance;
     }
 
-    public void withdraw(decimal amountToWithdraw)
+    public void Withdraw(decimal amountToWithdraw)
     {
-        throw new NotImplementedException();
+        if (amountToWithdraw > _balance)
+        {
+            return;
+        }
+        _balance -= amountToWithdraw;
     }
 }
