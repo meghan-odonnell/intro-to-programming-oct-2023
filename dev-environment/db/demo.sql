@@ -1,1 +1,1 @@
-created database demo
+create database demo 
