@@ -1,4 +1,5 @@
 using DemoApi.Services;
+using Marten;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,40 +13,52 @@ builder.Services.AddScoped<TemperatureConverterService>();
 builder.Services.AddScoped<ICalculateFees, StandardFeeCalculator>();
 builder.Services.AddScoped<ISystemTime, SystemTime>();
 
+
+var connectionString = builder.Configuration.GetConnectionString("database") ?? throw new Exception("No Database");
+
+builder.Services.AddMarten(options =>
+{
+    options.Connection(connectionString);
+    if (builder.Environment.IsDevelopment())
+    {
+        options.AutoCreateSchemaObjects = Weasel.Core.AutoCreate.All;
+    }
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-	app.UseSwagger();
-	app.UseSwaggerUI();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.MapGet("/temperatures/farenheit/{temp:float}/celcius", (float temp, TemperatureConverterService service) =>
 {
 
-	return service.ConvertFtoC(temp);
+    return service.ConvertFtoC(temp);
 });
 
 app.MapGet("/temperatures/celcius/{temp:float}/farenheit", (float temp, TemperatureConverterService service) =>
 {
-	return service.ConvertCtoF(temp);
+    return service.ConvertCtoF(temp);
 });
 
 app.MapGet("/states", () =>
 {
-	var states = new Dictionary<string, string>()
-	{
-		{ "OH", "Ohio" },
-		{ "KY", "Kentucky" }
-	};
+    var states = new Dictionary<string, string>()
+    {
+        { "OH", "Ohio" },
+        { "KY", "Kentucky" }
+    };
 
-	return Results.Ok(states);
+    return Results.Ok(states);
 });
 
 app.MapGet("/employees/{id}", (string id) =>
 {
-	return Results.Ok(new { name = "Bob Smith", status = "fulltime" });
+    return Results.Ok(new { name = "Bob Smith", status = "fulltime" });
 });
 
 app.Run(); // "Blocking Call"
